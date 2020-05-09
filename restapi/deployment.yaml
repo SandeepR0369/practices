@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: restapi
+  template:
+    metadata:
+      name: restapi
+      labels:
+        app: restapi
+    spec:
+      containers:
+      - name: restapi
+        # Image from dockerhub, This is the import path for the Go binary to build and run.
+        image: sandeepr0963/restapi:1.0.3
+        ports:
+        - containerPort: 8081
