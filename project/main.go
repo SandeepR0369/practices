@@ -71,7 +71,7 @@ func main() {
 		fmt.Println("!@", err)
 	}
 
-	fmt.Println("[Elastic][InsertProduct]Insertion Successful")
+	fmt.Println("Elastic Insertion Successful")
 
 }
 
