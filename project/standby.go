@@ -49,7 +49,7 @@ func main() {
 		log.Println("cannot unmarshal data", err)
 	}
 
-	//fmt.Println(data)
+	fmt.Println(data)
 
 	ctx := context.Background()
 	esclient, err := GetESClient()
@@ -61,18 +61,17 @@ func main() {
 	dataJSON, err := json.Marshal(data)
 
 	js := string(dataJSON)
-
 	_, err = esclient.Index().
 		Index("trading").
 		BodyJson(js).
 		Do(ctx)
 
 	if err != nil {
-		//	fmt.Printf("Failed to index, ID: %v", docId)
-		panic(err)
+		//	panic(err)
+		fmt.Println("!@", err)
 	}
 
-	fmt.Println("[Elastic][InsertProduct]Insertion Successful")
+	fmt.Println("Elastic Insertion Successful")
 
 }
 
