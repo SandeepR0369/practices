@@ -68,7 +68,6 @@ func main() {
 		Do(ctx)
 
 	if err != nil {
-		//	fmt.Printf("Failed to index, ID: %v", docId)
 		panic(err)
 	}
 
